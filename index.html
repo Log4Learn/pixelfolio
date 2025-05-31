@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ja" x-data="{ menuOpen: false }" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>R Oikawa | Webエンジニア ポートフォリオ</title>
+    <meta name="description" content="Webエンジニア R Oikawa のポートフォリオサイト。PHP/Laravelを中心に、Web制作・業務システム開発を提供しています。" />
+    <meta name="keywords" content="ポートフォリオ, Webエンジニア, Laravel, PHP, フリーランス, R Oikawa" />
+    <meta property="og:title" content="R Oikawa | Webエンジニア ポートフォリオ" />
+    <meta property="og:description" content="Webエンジニア R Oikawa の制作実績・スキル・プロフィールをご覧いただけます。" />
+    <meta property="og:url" content="https://example.github.io/" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://example.github.io/" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="./assets/img/favicon-32x32.png">
+
+    <!-- Tailwind / Font / Alpine.js -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.bunny.net/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="font-sans text-gray-800 bg-white">
+
+<!-- Header -->
+<header class="bg-white border-b shadow-md fixed top-0 left-0 w-full z-50">
+    <div class="max-w-7xl mx-auto px-4 py-6 flex justify-between items-center">
+        <h1 class="text-xl font-bold">R Oikawa</h1>
+        <button @click="menuOpen = !menuOpen" class="sm:hidden">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor">
+                <path x-show="!menuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                <path x-show="menuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <nav class="hidden sm:flex space-x-6" aria-label="グローバルナビ">
+            <a href="#about" class="hover:text-blue-600">自己紹介</a>
+            <a href="#skills" class="hover:text-blue-600">スキル</a>
+            <a href="#works" class="hover:text-blue-600">実績</a>
+            <a href="#contact" class="hover:text-blue-600">お問い合わせ</a>
+        </nav>
+    </div>
+    <div x-show="menuOpen" class="sm:hidden px-4 pb-4">
+        <a href="#about" class="block py-2">自己紹介</a>
+        <a href="#skills" class="block py-2">スキル</a>
+        <a href="#works" class="block py-2">実績</a>
+        <a href="#contact" class="block py-2">お問い合わせ</a>
+    </div>
+</header>
+
+<!-- Hero -->
+<section class="h-screen bg-cover bg-center relative flex items-center justify-center pt-24" style="background-image: url('assets/img/hero.png');">
+    <div class="absolute inset-0 bg-black opacity-50"></div> <!-- オーバーレイ -->
+    <div class="relative max-w-3xl px-4 text-white text-center">
+        <h2 class="text-4xl sm:text-5xl font-bold">Webエンジニア<br>R Oikawa</h2>
+        <p class="mt-6 text-lg">PHP / Laravel / Vue.js / AWS などを用いた開発に対応。業務システムやWebサイトを構築します。</p>
+    </div>
+</section>
+
+<!-- About -->
+<section id="about" class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+        <h2 class="text-2xl font-semibold mb-4">自己紹介</h2>
+        <p>フリーランスのWebエンジニアとして5年以上の経験があります。中小企業向けの業務システム開発やポータルサイト構築、マッチングサイトの開発などを手がけてきました。要件定義から保守運用まで一貫して対応可能です。</p>
+    </div>
+</section>
+
+<!-- Skills -->
+<section id="skills" class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-2xl font-semibold mb-6 text-center">スキル</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- PHP / 各種フレームワーク -->
+            <div class="p-4 bg-white rounded-lg shadow">
+                <h3 class="font-bold text-gray-800">PHP / 各種フレームワーク</h3>
+                <p class="text-sm text-gray-600 mt-2">
+                    Laravelを中心に、CakePHP、FuelPHP、CodeIgniter、Zend Frameworkなどの実務経験あり。ポータルサイトや業務管理システムの構築に対応。
+                </p>
+            </div>
+
+            <!-- Java / Play Framework / C# -->
+            <div class="p-4 bg-white rounded-lg shadow">
+                <h3 class="font-bold text-gray-800">Java / Play Framework / C#</h3>
+                <p class="text-sm text-gray-600 mt-2">
+                    Play Frameworkでの業務アプリケーション開発や、C#によるデスクトップ向け業務ツール開発に携わった経験あり。
+                </p>
+            </div>
+
+            <!-- Ruby / Python -->
+            <div class="p-4 bg-white rounded-lg shadow">
+                <h3 class="font-bold text-gray-800">Ruby / Python</h3>
+                <p class="text-sm text-gray-600 mt-2">
+                    RubyやPythonを用いたスクリプト作成、簡易データ処理、業務自動化ツールなどを開発した経験あり。API連携やCSV処理などに活用。
+                </p>
+            </div>
+
+            <!-- MySQL / DB設計 -->
+            <div class="p-4 bg-white rounded-lg shadow">
+                <h3 class="font-bold text-gray-800">MySQL / データベース設計</h3>
+                <p class="text-sm text-gray-600 mt-2">
+                    複数のプロジェクトにおいて、正規化と拡張性を考慮したスキーマ設計、SQLパフォーマンス調整、マイグレーション管理を担当。
+                </p>
+            </div>
+
+            <!-- JavaScript / フロントエンド各種 -->
+            <div class="p-4 bg-white rounded-lg shadow">
+                <h3 class="font-bold text-gray-800">JavaScript / Vue.js / React / Angular / Alpine.js</h3>
+                <p class="text-sm text-gray-600 mt-2">
+                    フロントエンド開発ではVue.jsをメインに、ReactやAngularを使用したページ構築・画面実装経験もあり。Alpine.jsは静的サイトでの簡易インタラクションに活用。
+                </p>
+            </div>
+
+            <!-- Git / GitHub / GitLab / AWS / Docker -->
+            <div class="p-4 bg-white rounded-lg shadow">
+                <h3 class="font-bold text-gray-800">Git / GitHub / GitLab / AWS / Docker</h3>
+                <p class="text-sm text-gray-600 mt-2">
+                    Gitの基本操作、GitHub/GitLabによるリポジトリ管理。AWS（SSH接続、ログ調査、デプロイ）、Dockerでの開発環境構築にも対応。
+                </p>
+            </div>
+
+            <!-- Linux / Shell / Webサーバー -->
+            <div class="p-4 bg-white rounded-lg shadow">
+                <h3 class="font-bold text-gray-800">Linux / Shell / Apache / Nginx</h3>
+                <p class="text-sm text-gray-600 mt-2">
+                    Linux環境での開発、cronによるスケジューリング、Apache/Nginxの構成編集やデプロイ設定の実務経験あり。
+                </p>
+            </div>
+
+            <!-- Kintone API / Slack API -->
+            <div class="p-4 bg-white rounded-lg shadow">
+                <h3 class="font-bold text-gray-800">Kintone API / Slack API</h3>
+                <p class="text-sm text-gray-600 mt-2">
+                    Kintone APIによる業務アプリの拡張開発、Slack APIを活用した通知連携・自動投稿などの社内業務効率化ツールを作成。
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Works -->
+<section id="works" class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-2xl font-semibold mb-6 text-center">実績</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div class="bg-gray-100 p-4 rounded-lg shadow">
+                <h3 class="font-bold">ガスポータルサイト</h3>
+                <p class="text-sm text-gray-600 mt-2">ガス会社向けポータルサイトの保守・運用業務を担当。支払いや契約変更などのWeb機能を継続改善。</p>
+                <p class="text-sm text-gray-500 mt-2">期間：2025年1月～現在</p>
+                <p class="text-sm text-gray-700 mt-2">担当工程：保守・実装・テスト</p>
+                <p class="text-sm text-gray-700 mt-2">使用技術：PHP, C#, Shell, Python, JavaScript / CakePHP, AWS, GitHub, GitLab, WinMerge</p>
+                <p class="text-sm text-blue-600 mt-2">
+                    <a href="https://kushiro-gas.co.jp/miraie/" target="_blank" class="underline hover:text-blue-800">ポータルサイト①URLを開く</a>
+                    <a href="https://portal.hokurikugas.co.jp/" target="_blank" class="underline hover:text-blue-800">ポータルサイト②URLを開く</a>
+                </p>
+            </div>
+
+            <div class="bg-gray-100 p-4 rounded-lg shadow">
+                <h3 class="font-bold">半導体生産制御システム</h3>
+                <p class="text-sm text-gray-600 mt-2">新規機能追加および既存機能修正。システム構築とテストプロセス改善に貢献。</p>
+                <p class="text-sm text-gray-500 mt-2">期間：2024年11月～2025年1月</p>
+                <p class="text-sm text-gray-700 mt-2">担当工程：詳細設計・実装・テスト</p>
+                <p class="text-sm text-gray-700 mt-2">使用技術：Java, JavaScript / Play Framework, H2, Jenkins</p>
+            </div>
+
+            <div class="bg-gray-100 p-4 rounded-lg shadow">
+                <h3 class="font-bold">宇宙・防衛クラウドシステム</h3>
+                <p class="text-sm text-gray-600 mt-2">クラウドシステムの詳細設計、バグ修正、負荷テストなどを担当。品質向上に貢献。</p>
+                <p class="text-sm text-gray-500 mt-2">期間：2024年7月～2024年10月</p>
+                <p class="text-sm text-gray-700 mt-2">担当工程：詳細設計・テスト・バグ修正</p>
+                <p class="text-sm text-gray-700 mt-2">使用技術：Java, JSP / Oracle, Eclipse, SVN</p>
+            </div>
+
+            <div class="bg-gray-100 p-4 rounded-lg shadow">
+                <h3 class="font-bold">マッチングサービス</h3>
+                <p class="text-sm text-gray-600 mt-2">フォトグラファーと顧客のマッチングシステムを構築。Vue.js + Laravel環境で開発。</p>
+                <p class="text-sm text-gray-500 mt-2">期間：2021年12月～2024年6月</p>
+                <p class="text-sm text-gray-700 mt-2">担当工程：設計・開発・保守・テスト</p>
+                <p class="text-sm text-gray-700 mt-2">使用技術：PHP, Vue.js / Laravel, Docker, GitHub, Auth0</p>
+                <p class="text-sm text-blue-600 mt-2">
+                    <a href="https://ami.photo/" target="_blank" class="underline hover:text-blue-800">URLを開く</a>
+                </p>
+            </div>
+
+            <div class="bg-gray-100 p-4 rounded-lg shadow">
+                <h3 class="font-bold">教育業界 生産管理システム</h3>
+                <p class="text-sm text-gray-600 mt-2">個人情報、勤怠、資料申請などの業務をWeb化し効率化。</p>
+                <p class="text-sm text-gray-500 mt-2">期間：2021年9月～2021年11月</p>
+                <p class="text-sm text-gray-700 mt-2">担当工程：開発・テスト</p>
+                <p class="text-sm text-gray-700 mt-2">使用技術：PHP, TypeScript, Angular / Laravel, MySQL</p>
+            </div>
+
+            <div class="bg-gray-100 p-4 rounded-lg shadow">
+                <h3 class="font-bold">スケジュール管理システム</h3>
+                <p class="text-sm text-gray-600 mt-2">レンタカー業界向け、配車管理システムの不具合修正および機能改修。</p>
+                <p class="text-sm text-gray-500 mt-2">期間：2021年5月～2021年7月</p>
+                <p class="text-sm text-gray-700 mt-2">担当工程：開発・テスト・保守</p>
+                <p class="text-sm text-gray-700 mt-2">使用技術：PHP, JavaScript / FullCalendar, Laravel, Git</p>
+            </div>
+
+            <div class="bg-gray-100 p-4 rounded-lg shadow">
+                <h3 class="font-bold">販売管理システム（貿易業界）</h3>
+                <p class="text-sm text-gray-600 mt-2">伝票と在庫管理システムを統合し、工数削減と業務効率化を実現。</p>
+                <p class="text-sm text-gray-500 mt-2">期間：2020年12月～2021年6月</p>
+                <p class="text-sm text-gray-700 mt-2">担当工程：開発・テスト</p>
+                <p class="text-sm text-gray-700 mt-2">使用技術：PHP, JavaScript / Spring Framework, Oracle, Solaris</p>
+            </div>
+
+            <div class="bg-gray-100 p-4 rounded-lg shadow">
+                <h3 class="font-bold">現場共有ツール（建築業界）</h3>
+                <p class="text-sm text-gray-600 mt-2">スケジュールや現場状況を管理するツールを構築。</p>
+                <p class="text-sm text-gray-500 mt-2">期間：2019年12月～2020年1月</p>
+                <p class="text-sm text-gray-700 mt-2">担当工程：開発・テスト</p>
+                <p class="text-sm text-gray-700 mt-2">使用技術：PHP / Linux</p>
+            </div>
+
+            <div class="bg-gray-100 p-4 rounded-lg shadow">
+                <h3 class="font-bold">業務管理システム（サロン業界）</h3>
+                <p class="text-sm text-gray-600 mt-2">予約や会計などの業務をWeb化し高速処理。</p>
+                <p class="text-sm text-gray-500 mt-2">期間：2020年1月～2020年3月</p>
+                <p class="text-sm text-gray-700 mt-2">担当工程：開発・テスト・保守</p>
+                <p class="text-sm text-gray-700 mt-2">使用技術：PHP, JavaScript / Laravel, MySQL, Git</p>
+            </div>
+
+            <div class="bg-gray-100 p-4 rounded-lg shadow">
+                <h3 class="font-bold">家畜管理システム（農畜業界）</h3>
+                <p class="text-sm text-gray-600 mt-2">紙管理の家畜データをWeb化し業務改善。</p>
+                <p class="text-sm text-gray-500 mt-2">期間：2018年10月～2019年9月</p>
+                <p class="text-sm text-gray-700 mt-2">担当工程：開発・テスト</p>
+                <p class="text-sm text-gray-700 mt-2">使用技術：PHP, JavaScript / Linux, MySQL</p>
+            </div>
+
+            <div class="bg-gray-100 p-4 rounded-lg shadow">
+                <h3 class="font-bold">配車管理システム（レンタル業界）</h3>
+                <p class="text-sm text-gray-600 mt-2">配車伝票・スケジュールをWeb化し、配車作業の効率を改善。</p>
+                <p class="text-sm text-gray-500 mt-2">期間：2018年2月～2018年9月</p>
+                <p class="text-sm text-gray-700 mt-2">担当工程：開発・テスト</p>
+                <p class="text-sm text-gray-700 mt-2">使用技術：PHP, JavaScript / Linux, MySQL</p>
+            </div>
+
+            <div class="bg-gray-100 p-4 rounded-lg shadow">
+                <h3 class="font-bold">情報管理システム（公務・保安業界）</h3>
+                <p class="text-sm text-gray-600 mt-2">紙ベースだった人物・資料情報の管理をWebシステム化。</p>
+                <p class="text-sm text-gray-500 mt-2">期間：2017年8月～2018年1月</p>
+                <p class="text-sm text-gray-700 mt-2">担当工程：開発・テスト</p>
+                <p class="text-sm text-gray-700 mt-2">使用技術：PHP, JavaScript / Linux, MySQL</p>
+            </div>
+
+            <div class="bg-gray-100 p-4 rounded-lg shadow">
+                <h3 class="font-bold">ふるさと納税サイト構築</h3>
+                <p class="text-sm text-gray-600 mt-2">EC機能付きのふるさと納税サイトを新規構築。</p>
+                <p class="text-sm text-gray-500 mt-2">期間：2017年4月～2017年6月</p>
+                <p class="text-sm text-gray-700 mt-2">担当工程：開発・テスト</p>
+                <p class="text-sm text-gray-700 mt-2">使用技術：PHP, JavaScript / Linux, MySQL</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-16 bg-gray-50">
+    <div class="max-w-xl mx-auto px-4 text-center">
+        <h2 class="text-2xl font-semibold mb-4">お問い合わせ</h2>
+        <p class="text-gray-600 mb-6">ご相談・お仕事のご依頼は以下のメールアドレスまでご連絡ください。</p>
+        <a href="mailto:r.oikawa.tech@gmail.com" class="inline-block bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition">
+            メールで連絡する
+        </a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-white text-center py-6 text-sm text-gray-600 border-t">
+    <p>&copy; 2025 R Oikawa. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
